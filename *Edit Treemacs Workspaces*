@@ -1,0 +1,16 @@
+#+TITLE: Edit Treemacs Workspaces & Projects
+# Call ~treemacs-finish-edit~ or press ~C-c C-c~ when done.
+# [[https://github.com/Alexander-Miller/treemacs#conveniently-editing-your-projects-and-workspaces][Click here for detailed documentation.]]
+# To cancel you can simply kill this buffer.
+
+* Perspective main
+** eko
+ - path :: ~
+* Perspective conradQuest
+** conradQuest
+ - path :: ~/code/GameDev/conradQuest
+* Tokymone
+** tokymon
+ - path :: ~/code/assignments/tokymon
+** projectJS
+ - path :: ~/code/assignments/projectJS
