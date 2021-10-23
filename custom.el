@@ -16,3 +16,4 @@
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
+(global-set-key (kbd "M-c") 'run-python)
