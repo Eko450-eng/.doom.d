@@ -16,4 +16,8 @@
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
-(global-set-key (kbd "M-c") 'run-python)
+(defun run-py ()
+  (interactive)
+  (shell-command (concat "python3 " buffer-file-name)))
+(global-set-key (kbd "M-c") 'run-py)
+
