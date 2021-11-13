@@ -20,7 +20,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(lsp-python-ms gotham-theme shell-pop ipretty prettier-js vterm hide-mode-line prettier htmltagwrap company tide rjsx-mode evil treemacs))
+   '(centered-window lsp-python-ms gotham-theme shell-pop ipretty prettier-js vterm hide-mode-line prettier htmltagwrap company tide rjsx-mode evil treemacs))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
@@ -46,17 +46,26 @@
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
  '(vc-annotate-very-old-color nil))
-(custom-set-faces
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
 (global-set-key (kbd "M-l") 'evil-window-right)
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
 (define-key global-map [?\s-r] '+vterm/toggle)
+(global-set-key (kbd "C-c") 'undefined)
+(global-set-key (kbd "C-c") 'kill-ring-save)
+(global-set-key (kbd "C-v") 'yank)
+
 ;; (toggle run-py ()
 ;;   (interactive)
 ;;   (shell-command (concat "python3 " buffer-file-name)))
