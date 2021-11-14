@@ -70,7 +70,7 @@
 (global-set-key (kbd "C-c") 'undefined)
 (global-set-key (kbd "C-c") 'kill-ring-save)
 (global-set-key (kbd "C-v") 'yank)
-(setenv "SHELL" "/usr/bin/fish")
+
 
 ;; (toggle run-py ()
 ;;   (interactive)
