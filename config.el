@@ -14,7 +14,7 @@
   (tide-hl-indentifier-mode +1)
   (company-mode +1))
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (Add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; (use-package tide
 ;;   :ensure t
