@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: reactComponent
+# key: rccomp
+# --
+
+function ${1:name}(){
+	return <div className="${2:class}">
+					$0
+				 </div>
+}
+export default $1
