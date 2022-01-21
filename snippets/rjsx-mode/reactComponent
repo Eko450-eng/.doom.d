@@ -4,7 +4,7 @@
 # --
 
 function ${1:name}(){
-	return <div className="${2:class}">
+	return <div className="$1">
 					$0
 				 </div>
 }

@@ -178,6 +178,36 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
 
 
 
@@ -212,7 +242,7 @@
  '(ansi-color-names-vector
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
  '(custom-safe-themes
-   '("06989bc1e34d6b52be32c817c3a0710f5e740bcd006376a8faf9352200e4051d" default))
+   '("1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" "06989bc1e34d6b52be32c817c3a0710f5e740bcd006376a8faf9352200e4051d" default))
  '(exwm-floating-border-color "#191b20")
  '(fci-rule-color "#5B6268")
  '(highlight-tail-colors
@@ -225,7 +255,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(pastebin auto-yasnippet flycheck-golangci-lint flymake-golangci lua-mode syntactic-close js-react-redux-yasnippets react-snippets md-readme vterm tide skewer-mode shell-pop rjsx-mode prettier-js prettier org-preview-html multiple-cursors lsp-python-ms lsp-javacomp lsp-java lsp-intellij lorem-ipsum jtags javap-mode javaimp javadoc-lookup ipretty intellij-theme htmltagwrap hide-mode-line gotham-theme evil company))
+   '(vterm centered-window pastebin auto-yasnippet flycheck-golangci-lint flymake-golangci lua-mode syntactic-close js-react-redux-yasnippets react-snippets md-readme tide skewer-mode shell-pop rjsx-mode prettier-js prettier org-preview-html multiple-cursors lsp-python-ms lsp-javacomp lsp-java lsp-intellij lorem-ipsum jtags javap-mode javaimp javadoc-lookup ipretty intellij-theme htmltagwrap hide-mode-line gotham-theme evil company))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
@@ -301,3 +331,6 @@
 
 (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
 (load-theme 'gotham)
+
+(setq-default mode-line-format nil)
+(setq-default header-line-format mode-line-format)

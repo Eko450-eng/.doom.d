@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: Import Component
-# key: imcom
+# key: imcomm
 # --
 
 import ${1:Component} from './components/$1'
