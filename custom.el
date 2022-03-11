@@ -208,6 +208,71 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
 
 
 
@@ -224,8 +289,20 @@
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
-(global-set-key (kbd "M-c") 'forgeRunClient)
-(global-set-key (kbd "C-x C-u") 'lsp-java-organize-imports)
+
+(global-set-key (kbd "M-C-l") 'evil-move-window-right)
+(global-set-key (kbd "M-C-h") 'evil-move-window-left)
+(global-set-key (kbd "M-C-j") 'evil-move-window-down)
+(global-set-key (kbd "M-C-k") 'evil-move-window-up)
+
+(global-set-key (kbd "M-L") 'evil-window-increase-width)
+(global-set-key (kbd "M-H") 'evil-window-decrease-width)
+(global-set-key (kbd "M-J") 'evil-window-decrease-height)
+(global-set-key (kbd "M-K") 'evil-window-increase-height)
+(global-set-key (kbd "M-c") 'treemacs-switch-workspace)
+
+;; (global-set-key (kbd "M-c") 'forgeRunClient)
+;; (global-set-key (kbd "C-x C-u") 'lsp-java-organize-imports)
 
 
 ;; (define-key global-map [?\s-c] '+vterm/toggle)
@@ -253,9 +330,11 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
+ '(minimap-mode t)
+ '(minimap-window-location 'right)
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(vterm centered-window pastebin auto-yasnippet flycheck-golangci-lint flymake-golangci lua-mode syntactic-close js-react-redux-yasnippets react-snippets md-readme tide skewer-mode shell-pop rjsx-mode prettier-js prettier org-preview-html multiple-cursors lsp-python-ms lsp-javacomp lsp-java lsp-intellij lorem-ipsum jtags javap-mode javaimp javadoc-lookup ipretty intellij-theme htmltagwrap hide-mode-line gotham-theme evil company))
+   '(minimap centered-window mood-line beacon vterm pastebin auto-yasnippet flycheck-golangci-lint flymake-golangci lua-mode syntactic-close js-react-redux-yasnippets react-snippets md-readme tide skewer-mode shell-pop rjsx-mode prettier-js prettier org-preview-html multiple-cursors lsp-python-ms lsp-javacomp lsp-java lsp-intellij lorem-ipsum jtags javap-mode javaimp javadoc-lookup ipretty intellij-theme htmltagwrap hide-mode-line evil company))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
@@ -302,7 +381,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(objed-cursor-color "#ff6c6b")
  '(package-selected-packages
-   '(jtags javadoc-lookup javap-mode intellij-theme flymake-gradle lsp-java flycheck-gradle gradle-mode lsp-intellij lorem-ipsum rjsx-mode typescript-mode centered-window lsp-python-ms gotham-theme shell-pop ipretty prettier-js vterm hide-mode-line prettier htmltagwrap company tide evil treemacs))
+   '(jtags javadoc-lookup javap-mode intellij-theme flymake-gradle lsp-java flycheck-gradle gradle-mode lsp-intellij lorem-ipsum rjsx-mode typescript-mode centered-window lsp-python-ms shell-pop ipretty prettier-js vterm hide-mode-line prettier htmltagwrap company tide evil treemacs))
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
@@ -330,7 +409,11 @@
  '(vc-annotate-very-old-color nil)
 
 (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
-(load-theme 'gotham)
 
-(setq-default mode-line-format nil)
 (setq-default header-line-format mode-line-format)
+(setq-default mode-line-format 'nil)
+
+(setq doom-theme 'doom-dark+)
+
+(put 'customize-group 'disabled nil)
+(put 'upcase-region 'disabled nil)

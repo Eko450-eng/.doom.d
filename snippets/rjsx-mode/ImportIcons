@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ImportIcons
+# key: fontawesomeimport
+# --
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { $(1:icon) } from '@fortawesome/free-solid-svg-icons'
+

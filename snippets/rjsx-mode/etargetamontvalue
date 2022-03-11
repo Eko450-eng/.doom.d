@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: etargetamontvalue
+# key: tagrg_
+# --
+e.target[${1:0}].value

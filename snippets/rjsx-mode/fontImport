@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: fontImport
+# key: getFontImpo
+# --
+
+    @font-face {
+        font-family: '${1:FontName}';
+        src: local('$1'), local('$1'),
+        url(${$1}) format('woff');
+        font-weight: 300;
+        font-style: normal;
+    }
