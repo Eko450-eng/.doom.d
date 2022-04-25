@@ -133,3 +133,7 @@
 (package! nord-theme)
 (package! fish-mode)
 (package! fish-completion)
+(package! gotham-theme)
+(package! fira-code-mode)
+(package! vterm)
+(package! vterm-toggle)

@@ -1,10 +1,3 @@
-(custom-set-faces)
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- 
-
 (setq auto-mode-alist (delete '("\\.ts\\'" . typescript-tsx-mode) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
@@ -36,11 +29,21 @@
 (global-set-key (kbd "M-G") 'beacon-blink)
 ;; Open bookmarks
 (global-set-key (kbd "M-c") 'treemacs-switch-workspace)
+
 ;; Toggling vterm
-(global-set-key (kbd "s-x") '+vterm/toggle)
+(global-set-key (kbd "s-x") 'vterm-toggle)
+
+;; Open vterm at bottom
+(setq vterm-toggle-fullscreen-p nil)
+(add-to-list 'display-buffer-alist
+             '((lambda(bufname _) (with-current-buffer bufname
+                                   (or (equal major-mode 'vterm-mode)
+                                       (string-prefix-p vterm-buffer-name bufname))))
+               (display-buffer-reuse-window display-buffer-at-bottom)
+               (window-height . 0.2)))
 
 ;; Organize and import java imports
-(global-set-key (kbd "C-x C-u") 'lsp-java-organize-imports)
+;; (global-set-key (kbd "C-x C-u") 'lsp-java-organize-imports)
 
 ;; Anything else
 (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
@@ -59,23 +62,17 @@
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(use-package fira-code-mode
+  :custom (fira-code-mode-disabled-ligatures '("[]" "</" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
+  :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes
+
+(setq js2-mode-show-strict-warnings nil)
+
 ;; (use-package tide
 ;;   :after (typescript-mode company flycheck)
 ;;   :hook ((typescript-mode . tide-setup)
 ;;          (typescript-mode . tide-hl-identifier-mode)
 ;;          (before-save . tide-format-before-save)))
-
- ;; (defvar bitlbee-password "geheim")
-
- ;; (add-hook 'erc-join-hook 'bitlbee-identify))
- ;; (defun bitlbee-identify ()
- ;;   "If we're on the bitlbee server, send the identify command to the
- ;; &bitlbee channel."
- ;;   (when (and (string= "localhost" erc-session-server)
- ;;              (string= "&bitlbee" (buffer-name)))
- ;;     (erc-message "PRIVMSG" (format "%s identify %s"
- ;;                                    (erc-default-target)
- ;;                                    bitlbee-password)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -117,5 +114,9 @@
     (cons 340 "#37474F")
     (cons 360 "#37474F")))
  '(vc-annotate-very-old-color nil))
-(setq lsp-disabled-clients '(eslint))
-(setq js2-strict-missing-semi-warning nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
