@@ -33,6 +33,8 @@
 (global-set-key (kbd "M-v") 'unbind-key)
 (global-set-key (kbd "M-v") 'split-window-horizontally)
 
+(global-set-key (kbd "M-f") 'unbind-key)
+(global-set-key (kbd "M-f") 'rainbow-mode)
 (global-set-key (kbd "M-y") 'lsp)
 
 (global-set-key (kbd "M-G") 'unbind-key)
@@ -51,6 +53,7 @@
                (window-height . 0.2)))
 
 (beacon-mode 1)
+(rainbow-mode 1)
 
 (setq org-hide-emphasis-markers t)
 

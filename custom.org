@@ -63,6 +63,8 @@
 
 ** Package functions
 #+begin_src emacs-lisp :tangle yes
+(global-set-key (kbd "M-f") 'unbind-key)
+(global-set-key (kbd "M-f") 'rainbow-mode)
 (global-set-key (kbd "M-y") 'lsp)
 #+end_src
 * Functions
@@ -97,6 +99,7 @@
 ** Beacon
 #+begin_src emacs-lisp :tangle yes
 (beacon-mode 1)
+(rainbow-mode 1)
 #+end_src
 
 ** Org mode
