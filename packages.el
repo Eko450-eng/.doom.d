@@ -137,3 +137,5 @@
 (package! fira-code-mode)
 (package! vterm)
 (package! vterm-toggle)
+(package! livedown)
+(package! lsp-haskell)
