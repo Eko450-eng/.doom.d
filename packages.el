@@ -94,7 +94,6 @@
 (package! md-readme)
 (package! nord-theme)
 (package! nvm)
-(package! org-bullets)
 (package! org-preview-html)
 (package! pfuture)
 (package! pkg-info)
