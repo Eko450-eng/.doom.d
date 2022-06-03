@@ -108,5 +108,4 @@
 (package! syntactic-close)
 (package! tide)
 (package! typescript-mode)
-(package! vterm-toggle)
 (package! yasnippet)
