@@ -100,7 +100,6 @@
 (package! pkg-info)
 (package! pos-tip)
 (package! posframe)
-(package! rainbow-mode)
 (package! request)
 (package! rjsx-mode)
 (package! s)
