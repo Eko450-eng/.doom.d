@@ -64,7 +64,6 @@
 (package! centered-window)
 (package! cfrs)
 (package! clippy)
-(package! dap-mode)
 (package! dash)
 (package! epl)
 (package! erc)
