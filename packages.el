@@ -84,7 +84,6 @@
 (package! livedown)
 (package! lorem-ipsum)
 (package! lsp-intellij)
-(package! lsp-treemacs)
 (package! lv)
 (package! md-readme)
 (package! nord-theme)
