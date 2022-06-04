@@ -72,8 +72,6 @@
 (package! erc)
 (package! f)
 (package! fira-code-mode)
-(package! fish-completion)
-(package! fish-mode)
 (package! flycheck)
 (package! flymake-easy)
 (package! gotham-theme)
