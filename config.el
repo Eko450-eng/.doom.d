@@ -11,6 +11,9 @@
 (setq org-directory "~/org/")
 (setq display-line-numbers-type t)
 
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+
 (use-package fira-code-mode
   :custom (fira-code-mode-disabled-ligatures '("[]" "</" "</>" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
   :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes
@@ -24,6 +27,36 @@
         (typescript-mode . lsp))
 
 (setq js2-mode-show-strict-warnings nil)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(setq package-selected-packages
+  '(dart-mode lsp-mode lsp-dart lsp-treemacs flycheck company
+    ;; Optional packages
+    lsp-ui company hover))
+
+(when (cl-find-if-not #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (mapc #'package-install package-selected-packages))
+
+(add-hook 'dart-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024))
+
+;; Assuming usage with dart-mode
+(use-package dart-mode
+  ;; Optional
+  :hook (dart-mode . flutter-test-mode))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload))
+  :custom
+  (flutter-sdk-path "/home/eko/flutter/"))
 
 (global-set-key (kbd "M-l") 'evil-window-right)
 (global-set-key (kbd "M-h") 'evil-window-left)
@@ -59,6 +92,20 @@
 
 (global-set-key (kbd "s-x") 'vterm-toggle)
 
+(global-set-key (kbd "M-F") 'unbind-key)
+(global-set-key (kbd "M-F") 'lorem-ipsum-insert-sentences)
+
+(setq parinfer-auto-switch-indent-mode t)
+(setq parinfer-auto-switch-indent-mode-when-closing t)
+
+(setq org-src-tab-acts-natively t)
+(setq org-src-preserve-indentation t)
+(use-package org-auto-tangle
+        :defer t
+        :hook (org-mode . org-auto-tangle-mode)
+        :config
+        (setq org-auto-tangle-default t))
+
 (beacon-mode 1)
 (rainbow-mode 1)
 
@@ -72,7 +119,7 @@
 
 (rainbow-mode 1)
 
-(set-popup-rule! "*vterm*" :side 'bottom :size 10 :select t)
+(set-popup-rule! "*vterm*" :side 'bottom :size 20 :select t)
 
 (setq)
 (custom-set-variables
@@ -127,8 +174,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-    (custom-set-variables
-    '(livedown-autostart nil) ; automatically open preview when opening markdown files
-    '(livedown-open t)        ; automatically open the browser window
-    '(livedown-port 1337)     ; port for livedown server
-    '(livedown-browser nil))  ; browser to use
+(custom-set-variables
+'(livedown-autostart nil) ; automatically open preview when opening markdown files
+'(livedown-open t)        ; automatically open the browser window
+'(livedown-port 1337)     ; port for livedown server
+'(livedown-browser nil))  ; browser to use

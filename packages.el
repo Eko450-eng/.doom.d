@@ -110,3 +110,7 @@
 (package! typescript-mode)
 (package! vterm-toggle)
 (package! yasnippet)
+(package! org-auto-tangle)
+(package! rust-mode)
+(package! flutter)
+(package! dart-mode)

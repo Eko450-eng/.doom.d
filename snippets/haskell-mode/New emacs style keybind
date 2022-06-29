@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: New emacs style keybind
+# key: keybindnew
+# --
+, ("${1:Master}", ${3:command})
