@@ -1,0 +1,57 @@
+Info 0    [10:47:08.650] Starting TS Server
+Info 1    [10:47:08.650] Version: 4.7.2
+Info 2    [10:47:08.650] Arguments: /usr/bin/node /usr/lib/node_modules/typescript/lib/tsserver.js --logFile /home/eko/.doom.d/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/d2362b3b725dc11ee255a46a7bc4ba97/tscancellation*
+Info 3    [10:47:08.650] Platform: linux NodeVersion: 18 CaseSensitive: true
+Info 4    [10:47:08.650] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [10:47:08.666] Format host information updated
+Info 6    [10:47:08.676] Search path: /home/eko/.doom.d
+Info 7    [10:47:08.677] For info: /home/eko/.doom.d/config.org :: No config files found.
+Info 8    [10:47:08.682] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 9    [10:47:09.403] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 721.4374549984932ms
+Info 10   [10:47:09.403] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [10:47:09.404] 	Files (19)
+
+Info 12   [10:47:09.404] -----------------------------------------------
+Info 13   [10:47:10.734] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 14   [10:47:10.758] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false structureIsReused:: Completely Elapsed: 24.45107600092888ms
+Info 15   [10:47:10.758] Different program with same set of files
+Info 16   [10:47:12.357] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 17   [10:47:12.378] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false structureIsReused:: Completely Elapsed: 19.99770000576973ms
+Info 18   [10:47:12.378] Different program with same set of files
+Info 19   [10:47:12.771] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 20   [10:47:12.788] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: false structureIsReused:: Completely Elapsed: 16.614522993564606ms
+Info 21   [10:47:12.788] Different program with same set of files
+Info 22   [10:47:13.109] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 23   [10:47:13.121] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 5 structureChanged: false structureIsReused:: Completely Elapsed: 11.496985003352165ms
+Info 24   [10:47:13.121] Different program with same set of files
+Info 25   [10:47:13.921] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 26   [10:47:13.932] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 6 structureChanged: false structureIsReused:: Completely Elapsed: 11.08220200240612ms
+Info 27   [10:47:13.932] Different program with same set of files
+Info 28   [10:47:14.335] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 29   [10:47:14.343] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 8.47826600074768ms
+Info 30   [10:47:14.343] Different program with same set of files
+Info 31   [10:47:14.881] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 32   [10:47:14.889] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 8 structureChanged: false structureIsReused:: Completely Elapsed: 8.235127002000809ms
+Info 33   [10:47:14.889] Different program with same set of files
+Info 34   [10:47:15.581] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 35   [10:47:15.589] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 9 structureChanged: false structureIsReused:: Completely Elapsed: 8.446171998977661ms
+Info 36   [10:47:15.590] Different program with same set of files
+Info 37   [10:47:16.214] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 38   [10:47:16.223] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 10 structureChanged: false structureIsReused:: Completely Elapsed: 8.51859200000763ms
+Info 39   [10:47:16.223] Different program with same set of files
+Info 40   [10:49:04.857] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 41   [10:49:04.858] Elapsed:: 0.29941000044345856ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 42   [10:50:32.870] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 43   [10:50:32.870] Elapsed:: 0.033271998167037964ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 44   [10:51:42.886] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 45   [10:51:42.886] Elapsed:: 0.018602997064590454ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 46   [11:12:55.115] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 47   [11:12:55.115] Elapsed:: 0.024131998419761658ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 48   [11:13:05.117] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 49   [11:13:05.117] Elapsed:: 0.01824299991130829ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 50   [11:14:47.136] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 51   [11:14:47.136] Elapsed:: 0.05232800543308258ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 52   [11:16:39.168] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 53   [11:16:39.168] Elapsed:: 0.01960800588130951ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 54   [11:16:57.173] FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
+Info 55   [11:16:57.173] Elapsed:: 0.03770199418067932ms FileWatcher:: Triggered with /home/eko/.doom.d/config.org 1:: WatchInfo: /home/eko/.doom.d/config.org 500 undefined WatchType: Closed Script info
