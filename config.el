@@ -11,19 +11,86 @@
 (setq org-directory "~/org/")
 (setq display-line-numbers-type t)
 
+(after! dtrt-indent
+  (add-to-list 'dtrt-indent-hook-mapping-list '(typescript-mode javascript typescript-indent-level)))
+
+(setq auto-mode-alist (delete '("\\.ts\\'" . typescript-tsx-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-mode))
+(add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
+
+(use-package! tree-sitter
+  :when (bound-and-true-p module-file-suffix)
+  :hook (prog-mode . tree-sitter-mode)
+  :hook (tree-sitter-after-on . tree-sitter-hl-mode)
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+  (defadvice! doom-tree-sitter-fail-gracefully-a (orig-fn &rest args)
+    "Don't break with errors when current major mode lacks tree-sitter support."
+    :around #'tree-sitter-mode
+    (condition-case e
+        (apply orig-fn args)
+      (error
+       (unless (string-match-p (concat "^Cannot find shared library\\|"
+                                       "^No language registered\\|"
+                                       "cannot open shared object file")
+                               (error-message-string e))
+         (signal (car e) (cadr e)))))))
+
+
+(use-package! typescript-mode
+  :mode ("\\.tsx\\'" . typescript-tsx-tree-sitter-mode)
+  :config
+  (setq typescript-indent-level 2)
+  (define-derived-mode typescript-tsx-tree-sitter-mode typescript-mode "TypeScript TSX"))
+
+(after! tree-sitter
+  (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-tsx-tree-sitter-mode . tsx)))
+
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'    lsp)
+
 (use-package fira-code-mode
   :custom (fira-code-mode-disabled-ligatures '("[]" "</" "</>" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
   :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes
 
-(setq auto-mode-alist (delete '("\\.ts\\'" . typescript-tsx-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
-
 (use-package lsp-mode
         :hook
-        (typescript-mode . lsp))
+        (tsx-mode . lsp))
 
 (setq js2-mode-show-strict-warnings nil)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(setq package-selected-packages
+  '(dart-mode lsp-mode lsp-dart lsp-treemacs flycheck company
+    ;; Optional packages
+    lsp-ui company hover))
+
+(when (cl-find-if-not #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (mapc #'package-install package-selected-packages))
+
+(add-hook 'dart-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024))
+
+;; Assuming usage with dart-mode
+(use-package dart-mode
+  ;; Optional
+  :hook (dart-mode . flutter-test-mode))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload))
+  :custom
+  (flutter-sdk-path "/home/eko/flutter/"))
 
 (global-set-key (kbd "M-l") 'evil-window-right)
 (global-set-key (kbd "M-h") 'evil-window-left)
@@ -52,12 +119,73 @@
 (global-set-key (kbd "M-f") 'rainbow-mode)
 (global-set-key (kbd "M-y") 'lsp)
 
+(good-scroll-mode t)
+
+(use-package scroll-on-jump
+  :config
+  (setq scroll-on-jump-duration 8.0)
+  (setq scroll-on-jump-smooth t))
+;; (setq scroll-on-jump-use-curve t)
+
+;; ;;
+:straight
+;;   (scroll-on-jump
+;;     :type git
+;;     :host gitlab
+;;     :repo "ideasman42/emacs-scroll-on-jump"))
+
+(with-eval-after-load 'evil
+  (scroll-on-jump-advice-add evil-undo)
+  (scroll-on-jump-advice-add evil-redo)
+  (scroll-on-jump-advice-add evil-jump-item)
+  (scroll-on-jump-advice-add evil-jump-forward)
+  (scroll-on-jump-advice-add evil-jump-backward)
+  (scroll-on-jump-advice-add evil-ex-search-next)
+  (scroll-on-jump-advice-add evil-ex-search-previous)
+  (scroll-on-jump-advice-add evil-forward-paragraph)
+  (scroll-on-jump-advice-add evil-backward-paragraph)
+  (scroll-on-jump-advice-add evil-goto-mark)
+
+  ;; Actions that themselves scroll.
+  (scroll-on-jump-with-scroll-advice-add evil-goto-line)
+  (scroll-on-jump-with-scroll-advice-add evil-scroll-down)
+  (scroll-on-jump-with-scroll-advice-add evil-scroll-up)
+  (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-center)
+  (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-top)
+  (scroll-on-jump-with-scroll-advice-add evil-scroll-line-to-bottom))
+
+(with-eval-after-load 'goto-chg
+  (scroll-on-jump-advice-add goto-last-change)
+  (scroll-on-jump-advice-add goto-last-change-reverse))
+
+
+;; (global-set-key (kbd "C-z") (scroll-on-jump-interactive 'undo))
+;; (global-set-key (kbd "%") (scroll-on-jump-advice-add evil-jump-item))
+;; (global-set-key (kbd "C-i") (scroll-on-jump-advice-add evil-jump-forward))
+;; (global-set-key (kbd "C-o") (scroll-on-jump-advice-add evil-jump-backward))
+;; (global-set-key (kbd "h") (scroll-on-jump-advice-add evil-backward-char))
+;; (global-set-key (kbd "l") (scroll-on-jump-advice-add evil-forward-char))
+
 (global-set-key (kbd "M-G") 'unbind-key)
 (global-set-key (kbd "M-G") 'beacon-blink)
 
 (global-set-key (kbd "M-c") 'treemacs-switch-workspace)
 
 (global-set-key (kbd "s-x") 'vterm-toggle)
+
+(global-set-key (kbd "M-F") 'unbind-key)
+(global-set-key (kbd "M-F") 'lorem-ipsum-insert-sentences)
+
+(setq parinfer-auto-switch-indent-mode t)
+(setq parinfer-auto-switch-indent-mode-when-closing t)
+
+(setq org-src-tab-acts-natively t)
+(setq org-src-preserve-indentation t)
+(use-package org-auto-tangle
+        :defer t
+        :hook (org-mode . org-auto-tangle-mode)
+        :config
+        (setq org-auto-tangle-default t))
 
 (beacon-mode 1)
 (rainbow-mode 1)
@@ -72,7 +200,7 @@
 
 (rainbow-mode 1)
 
-(set-popup-rule! "*vterm*" :side 'bottom :size 10 :select t)
+(set-popup-rule! "*vterm*" :side 'bottom :size 20 :select t)
 
 (setq)
 (custom-set-variables
